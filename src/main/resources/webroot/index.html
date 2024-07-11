@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <base href="."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/tag_icon.png">
+    <title>Home | MyRecSys</title>
+    <link rel="stylesheet" href="./css/gpt_style.css">
+    <script src="./js/myrecsys.js"></script>
+</head>
+<body style="background-color: whitesmoke; max-width: 100%;">
+    <header>
+        <div class="header-container" style="background-color: white;">
+            <span>
+                <a href="."><img alt="My RecSys Logo" height="70px" src="./images/logo_bar.png"></a>
+            </span>
+        </div>
+    </header>
+    <main>
+        <div class="main-container">
+            <div id="recPage"></div>
+        </div>
+    </main>
+</body>
+<script type="text/javascript">
+    var baseUrl = window.location.protocol + "//" + window.location.host + "/";
+
+    document.addEventListener('DOMContentLoaded', function() {
+        addGenreRow('recPage', 'Thriller', 'thriller-collection', 10, baseUrl);
+        addGenreRow('recPage', 'Action', 'drama-collection', 10, baseUrl);
+        addGenreRow('recPage', 'Adventure', 'adventure-collection', 10, baseUrl);
+        addGenreRow('recPage', 'Romance', 'romance-collection', 10, baseUrl);
+        addGenreRow('recPage', 'Animation', 'animation-collection', 10, baseUrl);
+        addGenreRow('recPage', 'Comedy', 'comedy-collection', 10, baseUrl);
+        addGenreRow('recPage', 'Drama', 'action-collection', 10, baseUrl);
+    });
+</script>
+</html>

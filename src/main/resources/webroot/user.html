@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <base href="."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/tag_icon.png">
+    <title>Home | MyRecSys</title>
+    <link rel="stylesheet" href="./css/gpt_style.css">
+    <script src="./js/myrecsys.js"></script>
+</head>
+
+<body style="background-color: whitesmoke; max-width: 100%;">
+    <header>
+        <div class="header-container" style="background-color: white;">
+            <span>
+                <a href="."><img alt="My RecSys Logo" height="70px" src="./images/logo_bar.png"></a>
+            </span>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <div id="user-details"></div>
+            <div id="rec-for-user"></div>
+        </div>
+    </main>
+</body>
+
+<script type="text/javascript">
+    function getQueryString(name, windowLocation) {
+        var regExp = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var res = windowLocation.search.substr(1).match(regExp);
+        if (res != null) {
+            return unescape(res[2])
+        }
+        return null
+    }
+
+    var windowLocation = window.location;
+    var userId = getQueryString("id", windowLocation);
+    var baseUrl = window.location.protocol + "//" + window.location.host + "/";
+
+    document.addEventListener('DOMContentLoaded', function() {
+        addUserDetails("user-details", userId, baseUrl);
+        addUserHistory("user-details", userId, baseUrl);
+        addRecForYou("rec-for-user", userId, baseUrl);
+    });
+</script>
+</html>
